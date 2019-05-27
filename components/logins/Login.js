@@ -26,7 +26,7 @@ class Login extends Component {
         return (
             <View style={styles.container}>
                 <View>
-                    <Text style={styles.formTop}>경기대학교 서명 시스템 로그인</Text>
+                    <Text style={styles.formTop}>경기대학교 서명 시스템 로그인ss</Text>
                 </View>
                 <View style={styles.form}>
                     <TextInput style={styles.input} placeholder="아이디" 
