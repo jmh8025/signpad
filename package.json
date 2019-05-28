@@ -4,12 +4,15 @@
   "private": true,
   "scripts": {
     "start": "node node_modules/react-native/local-cli/cli.js start",
+    "android": "cd ./android && ./gradlew app:assembleDebug && ./gradlew installDebug",
     "test": "jest"
   },
   "dependencies": {
     "crypto": "^1.0.1",
+    "native-base": "^2.12.1",
     "react": "16.8.3",
     "react-native": "0.59.8",
+    "react-native-navigation": "^2.20.2",
     "react-redux": "^7.0.3",
     "redux": "^4.0.1",
     "redux-thunk": "^2.3.0",

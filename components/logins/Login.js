@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import {View, StyleSheet, Text, TextInput, TouchableOpacity} from "react-native";
+import {Container, Text, Input,Form, Item, Label, Button} from 'native-base';
+import {StyleSheet} from "react-native";
 import { connect } from "react-redux";
 import * as actions from "../../actions/loginAction"
 
@@ -24,24 +25,30 @@ class Login extends Component {
     render() {
         const {actionLogin} = this.props;
         return (
-            <View style={styles.container}>
-                <View>
-                    <Text style={styles.formTop}>경기대학교 서명 시스템 로그인ss</Text>
-                </View>
-                <View style={styles.form}>
-                    <TextInput style={styles.input} placeholder="아이디" 
-                        onChangeText={id => this.setState({ id })}
-                        value={this.state.id}></TextInput>
-                    <TextInput style={styles.input} placeholder="비밀번호" secureTextEntry={true} 
-                        onChangeText={password => this.setState({ password })}
-                        value={this.state.password}></TextInput>
-                    <TouchableOpacity onPress={() => this.login()}>
-                    <Text style={styles.button}>
+            <Container style={styles.container}>
+                <Form>
+                    <Text style={styles.formTop}>경기대학교 서명 시스템 로그인</Text>
+                </Form>
+                <Form style={styles.form}>
+                    <Item floatingLabel>
+                        <Label>아이디</Label>
+                        <Input 
+                            onChangeText={id => this.setState({ id })}
+                            value={this.state.id}></Input>
+                    </Item>
+                    <Item floatingLabel>
+                        <Label>비밀번호</Label>
+                        <Input secureTextEntry={true} 
+                            onChangeText={password => this.setState({ password })}
+                            value={this.state.password}></Input>
+                    </Item>
+                </Form>
+                    <Button block style={styles.button} onPress={() => this.login()}>
+                    <Text>
                         로그인
                     </Text>
-                    </TouchableOpacity>
-                </View>
-            </View>
+                    </Button>
+            </Container>
         );
     }
 }
@@ -59,27 +66,14 @@ const styles = StyleSheet.create({
     }, 
     form : {
         padding : 20,
-        paddingBottom: 10,
         width : 500,
-        borderWidth : 2,
+        borderWidth : 4,
         borderColor: "#6ebddd",
     },
-    input : {
-        minWidth: 200,
-        borderBottomWidth : 1,
-        fontSize: 20,
-    },
     button : {
-        marginTop: 20,
-        color : "#FFFFFF",
-        backgroundColor : "#4E8DF5",
-        minHeight : 35,
-        borderRadius : 2,
-        justifyContent : "center",
-        alignItems : "center",
-        textAlign : "center",
-        textAlignVertical : "center",
-        fontSize : 20
+        marginLeft: 385, 
+        marginRight: 385, 
+        marginTop: 20
     }
 });
 
